@@ -33,7 +33,7 @@ app.get('/api/events', (req, res) => {
 
 // Default Route: Serves the main index.html file for any unmatched routes.
 // This is essential for Single Page Applications (SPAs) like React.
-app.get('*', (req, res) => {
+app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
