@@ -1,15 +1,13 @@
 const express = require('express');
-// We no longer need the 'path' module, as we'll use process.cwd()
-// const path = require('path'); 
+const path = require('path'); // We must re-import the path module
 const app = express();
 const PORT = process.env.PORT || 3000; 
 
-// Define the root path of the project once
-const projectRoot = process.cwd();
+// We define the static folder using path.resolve()
+const staticPath = path.resolve(__dirname, 'public');
 
 // 1. MIDDLEWARE: Serve Static Files (The Frontend)
-// We use the absolute path to the public folder.
-app.use(express.static(projectRoot + '/public')); 
+app.use(express.static(staticPath)); 
 
 // 2. API ROUTE: The dynamic backend logic
 app.get('/api/events', (req, res) => {
@@ -20,9 +18,9 @@ app.get('/api/events', (req, res) => {
 });
 
 // 3. CATCH-ALL ROUTE (Must be the last one defined!)
-// This sends the index.html from the absolute path.
+// We send the index.html from the resolved static path.
 app.get('/*', (req, res) => {
-    res.sendFile(projectRoot + '/public/index.html');
+    res.sendFile(path.join(staticPath, 'index.html'));
 });
 
 // 4. START THE SERVER
