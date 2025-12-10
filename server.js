@@ -4,14 +4,14 @@ const app = express();
 const PORT = process.env.PORT || 3000; 
 
 // 1. MIDDLEWARE: Serve Static Files (The Frontend)
+// This tells Express to look inside the 'public' folder for files like index.html and app.js
 app.use(express.static(path.join(__dirname, 'public'))); 
 
-// 2. DEFAULT ROUTE: Serves index.html when visiting the base URL (http://your-app.com/)
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
+// ----------------------------------------------------
+// 2. API ROUTE: The dynamic backend logic
+// ----------------------------------------------------
 
-// 3. API ROUTE: The dynamic backend logic
+// This route provides the list of events to your React frontend.
 app.get('/api/events', (req, res) => {
     // This will be replaced with MongoDB logic later
     const mockEvents = [
@@ -20,13 +20,20 @@ app.get('/api/events', (req, res) => {
     res.json(mockEvents); 
 });
 
-// 4. CATCH-ALL ROUTE: Must be the last one defined!
-// This sends the index.html for any other URL (e.g., /about, /details/123).
+// ----------------------------------------------------
+// 3. CATCH-ALL ROUTE (Must be the last one defined!)
+// ----------------------------------------------------
+
+// This handles all URLs (including the root '/') that didn't match
+// an API route, ensuring your React app always loads.
 app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-// 5. START THE SERVER
+// ----------------------------------------------------
+// 4. START THE SERVER
+// ----------------------------------------------------
+
 app.listen(PORT, () => {
     console.log(`Server listening on port ${PORT}`);
 });
