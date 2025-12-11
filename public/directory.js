@@ -74,7 +74,7 @@ function renderSpotlight(data) {
             </div>
             <p>${getField(item, 'description')}</p>
             <br>
-            <a href="${getField(item, 'link') || '#'}" target="_blank" class="vintage-btn">View Details</a>
+            <a href="${getField(item, 'links') || '#'}" target="_blank" class="vintage-btn">View Details</a>
         </div>
         `;
     }).join('');
@@ -114,7 +114,7 @@ function renderList(data) {
 
             <p>${getField(item, 'description')}</p>
             <p style="text-align: right;">
-                 <a href="${getField(item, 'link') || '#'}" target="_blank" class="vintage-btn">View Details</a>
+                 <a href="${getField(item, 'links') || '#'}" target="_blank" class="vintage-btn">View Details</a>
             </p>
         </div>
         `;
@@ -152,8 +152,9 @@ function performSearch() {
         const itemType = getField(item, 'type').toLowerCase();
         const itemCat = getField(item, 'category').toLowerCase();
         
-        const matchesType = typeFilter === '' || itemType === typeFilter;
-        const matchesCat = catFilter === '' || itemCat === catFilter;
+        // Check if the selected filter value is contained within the item's type/category string
+        const matchesType = typeFilter === '' || itemType.includes(typeFilter);
+        const matchesCat = catFilter === '' || itemCat.includes(catFilter);
 
         let matchesDate = true;
         const itemDateStr = getField(item, 'start date');

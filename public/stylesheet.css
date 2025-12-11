@@ -272,3 +272,29 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     filter: invert(0.2) sepia(1) saturate(5) hue-rotate(20deg);
     cursor: pointer;
 }
+
+/* --- MULTI-SELECT USABILITY FIX --- */
+select[multiple] {
+    /* Set a height so multiple options are visible */
+    height: 150px; 
+    /* Remove the default compact border-bottom style */
+    border: 2px solid var(--ink-color); 
+    /* Use padding to give space */
+    padding: 10px;
+    /* Reset the background to contrast with options */
+    background-color: var(--paper-bg); 
+    /* Allow the user to see the text better */
+    line-height: 1.2;
+}
+
+/* Style for the options within the multi-select */
+select[multiple] option {
+    padding: 5px;
+}
+
+/* Style for selected options */
+select[multiple] option:checked {
+    /* Highlight selected options with the theme color */
+    background-color: var(--highlight-color);
+    color: var(--paper-bg);
+}
