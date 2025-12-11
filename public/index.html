@@ -1,23 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Community Event Directory</title>
-    <link rel="stylesheet" href="styles.css">
+<title>Home Page</title>
+<link id="theme-link" rel="stylesheet" href="stylesheet.css">
 </head>
-<body>
-    <div id="root">
-        <p>Loading application...</p>
-    </div>
 
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-    
-    <!-- Add Babel Standalone to transpile JSX -->
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    
-    <!-- Change type to "text/babel" so Babel can process it -->
-    <script type="text/babel" src="app.js"></script>
+<body>
+  <h1>Welcome to Houston!</h1>
+  
+  <nav id="navbar">
+      <div class="nav-logo">HTX Connect</div>
+      <ul>
+          <a href="index.html">HOME</a>
+          <a href="directory.html">DIRECTORY</a>
+          <a href="references.html">REFERENCES</a>
+      </ul>
+  </nav>
+
+    <p>
+        Description paragraph ?? Check out our <a href="directory.html">Directory</a> to view upcoming events!
+    </p>
+
+  <div class="image">
+    <img src="downtown.jpg" alt="Image of Sugar Land">
+  </div>
+
+  <h2>Want to add your event?</h2>
+  <ul>
+    Fill out this <a href="https://forms.gle/D7X55TysrJ4tpjRg6">form</a> to connect with us!
+  </ul>
+
+  <script src="functions.js"></script>
 </body>
 </html>
