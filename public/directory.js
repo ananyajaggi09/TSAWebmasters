@@ -152,7 +152,6 @@ function performSearch() {
         const itemType = getField(item, 'type').toLowerCase();
         const itemCat = getField(item, 'category').toLowerCase();
         
-        // Check if the selected filter value is contained within the item's type/category string
         const matchesType = typeFilter === '' || itemType.includes(typeFilter);
         const matchesCat = catFilter === '' || itemCat.includes(catFilter);
 
