@@ -336,8 +336,8 @@ padding: 2rem;
 }
 
 .slider-nav a {
-  width: 0.5rem;
-  height: 0.5rem;
+  width: 1rem;
+  height: 1rem;
   border-radius: 50%;
   background-color: white;
   opacity: 0.75;
