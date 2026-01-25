@@ -335,4 +335,15 @@ padding: 2rem;
   z-index: 1;
 }
 
+.slider-nav a {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: white;
+  opacity: 0.75;
+  transition: opacity 250ms ease;
+}
 
+.slider-nav a:hover { 
+  opacity: 1;
+}

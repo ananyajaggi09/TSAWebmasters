@@ -22,21 +22,74 @@
     </p>
   <section class="container">
     <div class="slider-wrapper">
-
+      <button class="arrow arrow-left" onclick="changeSlide(-1)">❮</button>
+      
       <div class="image">
-        <img id="s-1" src="houstondowntown.jpg" alt="Image of Sugar Land">
-        <img id="s-2" src="sltx.jpg" alt="Img of Sugar Land">
-        <img id="s-3" src="sltx2.jpg" alt="Image of Sugar Land">
+        <img class="slide active" src="houstondowntown.jpg" alt="Image of Sugar Land">
+        <img class="slide" src="sltx.jpg" alt="Img of Sugar Land">
+        <img class="slide" src="sltx2.jpg" alt="Image of Sugar Land">
       </div>
 
-      <div class="slider-nav">
-        <a href="#s-1"></a>
-        <a href="#s-2"></a>
-        <a href="#s-3"></a>
-      </div>
-
+      <button class="arrow arrow-right" onclick="changeSlide(1)">❯</button>
     </div>
-  </section>
+</section>
+
+<style>
+  .slider-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .image {
+    position: relative;
+    width: 100%;
+  }
+
+  .slide {
+    display: none;
+    width: 100%;
+  }
+
+  .slide.active {
+    display: block;
+  }
+
+  .arrow {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 1rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.3s;
+  }
+
+  .arrow:hover {
+    background: rgba(0, 0, 0, 0.8);
+  }
+
+  .arrow-left {
+    left: 10px;
+  }
+
+  .arrow-right {
+    right: 10px;
+  }
+</style>
+
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+
+  function changeSlide(direction) {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + direction + slides.length) % slides.length;
+    slides[currentSlide].classList.add('active');
+  }
+</script>
 
   <h2>Want to add your event?</h2>
   <ul>
