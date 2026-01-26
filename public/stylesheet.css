@@ -160,7 +160,7 @@ img {
   box-shadow: 0 5px 15px var(--shadow-color);
 }
 
-/* --- spotlight section styling --- */
+/* --- spotlight section style */
 .spotlight-grid {
   display: flex;
   flex-wrap: wrap; 
@@ -266,17 +266,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     cursor: pointer;
 }
 
-/* --- MULTI-SELECT USABILITY FIX --- */
+/*MULTI-SELECT--- */
 select[multiple] {
-    /* Set a height so multiple options are visible */
     height: 150px; 
-    /* Remove the default compact border-bottom style */
     border: 2px solid var(--ink-color); 
-    /* Use padding to give space */
     padding: 10px;
-    /* Reset the background to contrast with options */
     background-color: var(--paper-bg); 
-    /* Allow the user to see the text better */
     line-height: 1.2;
 }
 
