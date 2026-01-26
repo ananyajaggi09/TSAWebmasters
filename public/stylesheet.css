@@ -472,4 +472,4 @@ padding: 2rem;
 #user-input { flex: 1; border: 1px solid #ccc; padding: 8px; border-radius: 4px; }
 .bot-msg { background: #d1eaff; padding: 8px; border-radius: 10px 10px 10px 0; align-self: flex-start; font-size: 13px; }
 .user-msg { background: #000000; color: white; padding: 8px; border-radius: 10px 10px 0 10px; align-self: flex-end; font-size: 13px; }
-#chat-toggle { position: fixed; bottom: 20px; right: 20px; background: #004a99; color: white; border: none; padding: 12px 20px; border-radius: 50px; cursor: pointer; z-index: 9999; }
+#chat-toggle { position: fixed; bottom: 20px; right: 20px; background: #004a99; color: white; border: none; padding: 12px 20px; border-radius: 50px; cursor: pointer; z-index: 999999; pointer-events: auto !important; }
