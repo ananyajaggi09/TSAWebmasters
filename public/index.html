@@ -105,29 +105,27 @@
   <div class="bordered-div">
     <h2>Want to add your event?</h2>
     <div style="max-width: 800px; margin: 0 auto; border: 5px solid black; padding: 20px; background-color: #e9d8c4;">
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeD0Axv4d_xO-libOb-_uqeKY0SIHtdQs10JeN-p1r9OybMRg/viewform?embedded=true" width="100%" height="2027" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeD0Axv4d_xO-libOb-_uqeKY0SIHtdQs10JeN-p1r9OybMRg/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    </div>
+  </div>
+
+  <button id="chat-toggle" onclick="toggleChat()"> Need Some Help? </button>
+
+  <div id="tsa-chat">
+    <div id="chat-header">
+      <span>SLTX Assistant</span>
+      <span id="close-btn" onclick="toggleChat()">&times;</span>
+    </div>
+    <div id="chat-messages">
+      <div class="bot-msg">Hi! How can I help you today?</div>
+    </div>
+    <div id="chat-input-area">
+      <input type="text" id="user-input" placeholder="Ask me something..." onkeypress="if(event.key === 'Enter') sendMessage()">
+      <button onclick="sendMessage()">Go</button>
     </div>
   </div>
 
   <script src="functions.js"></script>
-
-  <button id="chat-toggle" onclick="toggleChat()"> Need Some Help? </button>
-
-<div id="tsa-chat">
-    <div id="chat-header" style="display: flex; justify-content: space-between; align-items: center;">
-      <span>SLTX Assistant</span>
-      <span onclick="toggleChat()" style="cursor: pointer; font-size: 20px; line-height: 20px;">&times;</span>
-    </div>
-    <div id="chat-messages">
-        <div class="bot-msg">Hi! How can I help you today?</div>
-    </div>
-    <div id="chat-input-area">
-        <input type="text" id="user-input" placeholder="Ask me something..." onkeypress="if(event.key === 'Enter') sendMessage()">
-        <button onclick="sendMessage()" style="margin-left:5px; cursor:pointer;">Go</button>
-    </div>
-</div>
-
-<script src="/bot.js"></script>
+  <script src="bot.js"></script> 
 </body>
-</html>
 </html>
