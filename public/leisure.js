@@ -1,5 +1,4 @@
-// google sheet link
-const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRSC7w4FegViquAyDj0CM1QhYDzArfQ626Fqjl3b3DCTLxYQY2s6GTaW8Lf7SOrDaRXTv5DXYT6SKF-/pub?output=csv';
+const SHEET_URL = 'https://docs.google.com/spreadsheets/d/1HKl9wELPQwHCanzKj2ueCshrUInt24SFnpYrxumemWM/edit?usp=sharing/export?format=csv';
 
 let allData = [];
 
