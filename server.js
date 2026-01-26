@@ -7,8 +7,12 @@ const staticPath = path.resolve(__dirname, 'public');
 
 app.use(express.static(staticPath));
 
-app.get('*', (req, res) => {
+app.get('/', (req, res) => {
     res.sendFile(path.join(staticPath, 'index.html'));
+});
+
+app.get('*', (req, res) => {
+    res.status(404).sendFile(path.join(staticPath, 'index.html')); 
 });
 
 app.listen(PORT, '0.0.0.0', () => {
