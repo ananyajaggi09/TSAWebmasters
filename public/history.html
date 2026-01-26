@@ -6,7 +6,7 @@
 </head>
 
 <body>
-  <h1>Want to Learn More about Sugar Land?</h1>
+  <h1>Want to learn more about Sugar Land?</h1>
   
   <nav id="navbar">
       <div class="nav-logo">SLTX Connect</div>
@@ -21,5 +21,28 @@
   </nav>
 
     <p>
-        put in history of sltx here
+        put in history
     </p>
+
+  <script src="functions.js"></script>
+
+  <button id="chat-toggle" onclick="toggleChat()"> Need Some Help? </button>
+
+<div id="tsa-chat">
+    <div id="chat-header" style="display: flex; justify-content: space-between; align-items: center;">
+      <span>SLTX Assistant</span>
+      <span onclick="toggleChat()" style="cursor: pointer; font-size: 20px; line-height: 20px;">&times;</span>
+    </div>
+    <div id="chat-messages">
+        <div class="bot-msg">Hi! How can I help you today?</div>
+    </div>
+    <div id="chat-input-area">
+        <input type="text" id="user-input" placeholder="Ask me something..." onkeypress="if(event.key === 'Enter') sendMessage()">
+        <button onclick="sendMessage()" style="margin-left:5px; cursor:pointer;">Go</button>
+    </div>
+</div>
+
+<script src="bot.js"></script>
+</body>
+</html>
+</html>
