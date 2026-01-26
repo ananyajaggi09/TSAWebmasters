@@ -16,6 +16,7 @@
           <a href="leisure.html">LEISURE</a>
           <a href="references.html">REFERENCES</a>
           <a href="TSAinfo.html">ABOUT TSA</a>
+          <a href="history.html">HISTORY</a>
       </ul>
   </nav>
 
@@ -113,7 +114,10 @@
   <button id="chat-toggle" onclick="toggleChat()"> Need Some Help? </button>
 
 <div id="tsa-chat">
-    <div id="chat-header">SLTX Assistant</div>
+    <div id="chat-header" style="display: flex; justify-content: space-between; align-items: center;">
+      <span>SLTX Assistant</span>
+      <span onclick="toggleChat()" style="cursor: pointer; font-size: 20px; line-height: 20px;">&times;</span>
+    </div>
     <div id="chat-messages">
         <div class="bot-msg">Hi! How can I help you today?</div>
     </div>

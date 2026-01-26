@@ -1,6 +1,14 @@
 function toggleChat() {
     const chat = document.getElementById('tsa-chat');
-    chat.style.display = chat.style.display === 'flex' ? 'none' : 'flex';
+    const btn = document.getElementById('chat-toggle');
+    
+    if (chat.style.display === 'flex') {
+        chat.style.display = 'none';
+        btn.style.display = 'block'; // Show the button when chat is closed
+    } else {
+        chat.style.display = 'flex';
+        btn.style.display = 'none';  // Hide the button when chat is open
+    }
 }
 
 function sendMessage() {
@@ -16,6 +24,8 @@ function sendMessage() {
 
         if (text.includes("chapter") || text.includes("tsa") || text.includes("competition")) {
             reply = "Check the TSA Info page for more details!";
+        } else if (text.includes("add event") || text.includes("my event")){
+            reply = "To add your event, check out the Resource Improvement Form at the bottom of the 'Home Page'!";
         } else if (text.includes("sugar land") || text.includes("sltx")) {
             reply = "Welcome to Sugar Land! SLTX Connect is all about connecting you to Sugar Land's best spots! How can I help you today?";
         } else if (text.includes("park") || text.includes("leisure") || text.includes("internships") || text.includes("internship") || text.includes("food") || text.includes("restaurants") || text.includes("teens") || text.includes("children") || text.includes("seniors") || text.includes("adults")) {
