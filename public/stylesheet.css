@@ -456,3 +456,17 @@ padding: 2rem;
   color: var(--ink-color);
   opacity: 0.8;
 }
+
+/* Chatbot Styling */
+#tsa-chat {
+    position: fixed; bottom: 20px; right: 20px; width: 300px; 
+    background: white; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    font-family: Arial, sans-serif; display: none; flex-direction: column; z-index: 10000; overflow: hidden;
+}
+#chat-header { background: #000000; color: white; padding: 15px; font-weight: bold; }
+#chat-messages { height: 200px; overflow-y: auto; padding: 15px; background: #f4f4f4; display: flex; flex-direction: column; gap: 8px; }
+#chat-input-area { display: flex; border-top: 1px solid #ddd; padding: 10px; }
+#user-input { flex: 1; border: 1px solid #ccc; padding: 8px; border-radius: 4px; }
+.bot-msg { background: #d1eaff; padding: 8px; border-radius: 10px 10px 10px 0; align-self: flex-start; font-size: 13px; }
+.user-msg { background: #000000; color: white; padding: 8px; border-radius: 10px 10px 0 10px; align-self: flex-end; font-size: 13px; }
+#chat-toggle { position: fixed; bottom: 20px; right: 20px; background: #004a99; color: white; border: none; padding: 12px 20px; border-radius: 50px; cursor: pointer; z-index: 9999; }

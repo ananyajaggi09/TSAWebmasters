@@ -36,5 +36,19 @@
 
     <script src="references.js"></script>
 
+    <button id="chat-toggle" onclick="toggleChat()"> Need Some Help? </button>
+
+<div id="tsa-chat">
+    <div id="chat-header">SLTX Assistant</div>
+    <div id="chat-messages">
+        <div class="bot-msg">Hi! How can I help you today?</div>
+    </div>
+    <div id="chat-input-area">
+        <input type="text" id="user-input" placeholder="Ask me something..." onkeypress="if(event.key === 'Enter') sendMessage()">
+        <button onclick="sendMessage()" style="margin-left:5px; cursor:pointer;">Go</button>
+    </div>
+</div>
+
+<script src="bot.js"></script>
 </body>
 </html>
