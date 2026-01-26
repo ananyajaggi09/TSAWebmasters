@@ -452,3 +452,12 @@ padding: 2rem;
     margin-right: 0.5rem;
     cursor: pointer;
 }
+
+.sub {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-top: -10px;
+  margin-bottom: 1.5rem;
+  color: var(--ink-color);
+  opacity: 0.8;
+}
