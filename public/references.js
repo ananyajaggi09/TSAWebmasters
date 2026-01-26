@@ -1,17 +1,29 @@
-const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRSC7w4FegViquAyDj0CM1QhYDzArfQ626Fqjl3b3DCTLxYQY2s6GTaW8Lf7SOrDaRXTv5DXYT6SKF-/pub?output=csv';
+const SHEET_URLS = [
+    'https://docs.google.com/spreadsheets/d/e/2PACX-1vRSC7w4FegViquAyDj0CM1QhYDzArfQ626Fqjl3b3DCTLxYQY2s6GTaW8Lf7SOrDaRXTv5DXYT6SKF-/pub?output=csv',
+    'https://docs.google.com/spreadsheets/d/e/2PACX-1vROBQDswPvgzgIDM2avaO496XYU308PU6-dFXrbN9yaWsKbWnVvNDpLfpgH1BVNAfPCxhtF6CQ_wlkV/pub?output=csv'
+];
 
 document.addEventListener('DOMContentLoaded', () => {
-    Papa.parse(SHEET_URL, {
-        download: true,
-        header: true,
-        skipEmptyLines: true,
-        complete: function(results) {
-            renderReferences(results.data);
-        },
-        error: function(error) {
-            console.error("Error:", error);
-            document.getElementById('references-container').innerHTML = '<p>Error loading links.</p>';
-        }
+    let allData = [];
+    let loaded = 0;
+
+    SHEET_URLS.forEach(url => {
+        Papa.parse(url, {
+            download: true,
+            header: true,
+            skipEmptyLines: true,
+            complete: function(results) {
+                allData = allData.concat(results.data);
+                loaded++;
+                if (loaded === SHEET_URLS.length) {
+                    renderReferences(allData);
+                }
+            },
+            error: function(error) {
+                console.error("Error:", error);
+                document.getElementById('references-container').innerHTML = '<p>Error loading links.</p>';
+            }
+        });
     });
 });
 
