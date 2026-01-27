@@ -489,24 +489,16 @@ padding: 2rem;
     z-index: 9999999 !important; 
     overflow: hidden;
 }
-#chat-header {
-    background: #000000;
-    color: white;
-    padding: 12px 15px; /* Added some breathing room */
+#chat-header { 
+    background: #000000; 
+    color: white; 
+    padding: 10px 15px; 
     font-weight: bold;
-    display: flex !important;
+    display: flex !important; 
     justify-content: space-between !important; 
     align-items: center !important;
-     width: 100%;
-    box-sizing: border-box; 
-}
-
-#close-btn {
-    cursor: pointer;
-    font-size: 24px;
-    line-height: 1; 
-    padding: 0 5px;
-    transition: color 0.2s;
+    box-sizing: border-box;
+    width: 100%;
 }
 #chat-header span:last-child:hover {
     color: #ff4d4d; 
