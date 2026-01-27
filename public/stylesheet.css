@@ -472,7 +472,12 @@ padding: 2rem;
     width: 300px;
     height: 400px;
     z-index: 9999999 !important;
-    /* Don't put display:flex here, the JS handles that */
+    background: white; /* Ensure it has a background so it's not transparent */
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    overflow: hidden;
+    display: none; 
+    flex-direction: column;
 }
 #chat-header { 
     background: #000000; 
