@@ -492,11 +492,13 @@ padding: 2rem;
 #chat-header { 
     background: #000000; 
     color: white; 
-    padding: 15px; 
+    padding: 10px 15px; 
     font-weight: bold;
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
+    display: flex !important; 
+    justify-content: space-between !important; 
+    align-items: center !important;
+    box-sizing: border-box;
+    width: 100%;
 }
 #chat-header span:last-child:hover {
     color: #ff4d4d; 
