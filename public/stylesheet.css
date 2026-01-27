@@ -464,47 +464,54 @@ padding: 2rem;
     display: block !important; /* Force it to show */
     z-index: 9999999 !important;
 }
-
 #tsa-chat {
     position: fixed !important;
     bottom: 80px !important;
     right: 20px !important;
-    width: 300px;
-    height: 400px;
+    width: 320px !important;
+    height: 450px !important;
     z-index: 9999999 !important;
-    background: white; /* Ensure it has a background so it's not transparent */
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    overflow: hidden;
-    display: none; 
-    flex-direction: column;
+    background: white !important;
+    border-radius: 12px !important;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4) !important;
+    display: none; /* JS toggles this to flex */
+    flex-direction: column !important;
+    overflow: hidden !important;
+    border: 1px solid #ccc !important;
 }
+
 #chat-header { 
-    background: #000000; 
-    color: white; 
-    padding: 10px 15px; 
-    font-weight: bold;
+    background: #000 !important; 
+    color: #fff !important; 
+    padding: 0 15px !important; 
+    height: 50px !important; 
     display: flex !important; 
-    flex-direction: row !important; 
     justify-content: space-between !important; 
     align-items: center !important; 
-    box-sizing: border-box;
-    width: 100%;
+    flex-shrink: 0 !important; /* PREVENTS SQUISHING */
+}
+
+#chat-messages { 
+    flex: 1 !important; /* TELLS THIS PART TO GROW AND TAKE ALL SPARE SPACE */
+    overflow-y: auto !important; 
+    background: #f4f4f4 !important;
+    padding: 15px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+}
+
+#chat-input-area {
+    display: flex !important;
+    padding: 10px !important;
+    background: white !important;
+    border-top: 1px solid #ddd !important;
+    flex-shrink: 0 !important; /* PREVENTS SQUISHING */
 }
 #chat-header span:last-child:hover {
     color: #ff4d4d; 
 }
-#chat-messages { 
-    min-height: 250px; /* Forces the box to stay open at a good size */
-    max-height: 300px; 
-    overflow-y: auto; 
-    background: #f4f4f4;
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-#chat-input-area { display: flex; border-top: 1px solid #ddd; padding: 10px; }
+
 #user-input { flex: 1; border: 1px solid #ccc; padding: 8px; border-radius: 4px; }
 .bot-msg { background: #d1eaff; padding: 8px; border-radius: 10px 10px 10px 0; align-self: flex-start; font-size: 13px; }
 .user-msg { background: #000000; color: white; padding: 8px; border-radius: 10px 10px 0 10px; align-self: flex-end; font-size: 13px; }
