@@ -24,7 +24,7 @@ function sendMessage() {
             reply = "To add your event, check out the Resource Improvement Form at the bottom of the 'Home Page'!";
         } else if (text.includes("sugar land") || text.includes("sltx")) {
             reply = "Welcome to Sugar Land! SLTX Connect is all about connecting you to Sugar Land's best spots! How can I help you today?";
-        } else if (text.includes("park") || text.includes("leisure") || text.includes("internships") || text.includes("internship") || text.includes("food") || text.includes("restaurants") || text.includes("teens") || text.includes("children") || text.includes("seniors") || text.includes("adults")) {
+        } else if (text.includes("park") || text.includes("leisure") || text.includes("internships") || text.includes("internship") || text.includes("food") || text.includes("restaurants") text.includes("restaurant") || text.includes("teens") || text.includes("children") || text.includes("seniors") || text.includes("adults")) {
             reply = "Check out the 'Leisure' page for the best spots in town.";
         } else if (text.includes("volunteering") || text.includes("events") || text.includes("service") || text.includes("support") || text.includes("donations") || text.includes("non-profit")) {
             reply = "Check out the 'Directory' page to find out more about this.";
