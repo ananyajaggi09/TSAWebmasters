@@ -467,7 +467,7 @@ padding: 2rem;
     background: white !important;
     border-radius: 12px !important;
     box-shadow: 0 8px 20px rgba(0,0,0,0.4) !important;
-    display: none; /* JS toggles this to flex */
+    display: none; 
     flex-direction: column !important;
     overflow: hidden !important;
     border: 1px solid #ccc !important;
@@ -481,11 +481,11 @@ padding: 2rem;
     display: flex !important; 
     justify-content: space-between !important; 
     align-items: center !important; 
-    flex-shrink: 0 !important; /* PREVENTS SQUISHING */
+    flex-shrink: 0 !important; 
 }
 
 #chat-messages { 
-    flex: 1 !important; /* TELLS THIS PART TO GROW AND TAKE ALL SPARE SPACE */
+    flex: 1 !important; 
     overflow-y: auto !important; 
     background: #f4f4f4 !important;
     padding: 15px !important;
@@ -499,34 +499,35 @@ padding: 2rem;
     padding: 10px !important;
     background: white !important;
     border-top: 1px solid #ddd !important;
-    flex-shrink: 0 !important; /* PREVENTS SQUISHING */
+    flex-shrink: 0 !important; 
 }
 
 #chat-toggle {
     position: fixed !important;
     bottom: 20px !important;
     right: 20px !important;
-    background-color: var(--ink-color) !important;
-    color: var(--paper-bg) !important;
-    border: 2px solid var(--highlight-color) !important;
-    padding: 12px 20px !important;
-    font-family: var(--font-headline) !important;
+    background-color: #007bff !important; 
+    color: white !important;
+    border: none !important;
+    padding: 15px 30px !important;
+    font-family: var(--font-typewriter) !important;
     font-size: 1rem !important;
     font-weight: bold !important;
     cursor: pointer !important;
-    border-radius: 8px !important;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3) !important;
+    border-radius: 50px !important; 
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4) !important;
     z-index: 9999999 !important;
     display: block !important;
     transition: all 0.3s ease !important;
 }
 
 #chat-toggle:hover {
-    background-color: var(--highlight-color) !important;
+    background-color: #0056b3 !important; 
     transform: scale(1.05) !important;
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.6) !important;
 }
 
-/* Send button styling - ADD THIS TOO */
+
 #chat-input-area button {
     background-color: var(--ink-color) !important;
     color: var(--paper-bg) !important;
@@ -542,7 +543,6 @@ padding: 2rem;
     background-color: var(--highlight-color) !important;
 }
 
-/* Close button styling */
 #close-btn {
     cursor: pointer !important;
     font-size: 1.5rem !important;
