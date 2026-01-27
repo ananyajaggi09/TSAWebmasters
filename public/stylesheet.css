@@ -485,8 +485,9 @@ padding: 2rem;
     padding: 10px 15px; 
     font-weight: bold;
     display: flex !important; 
+    flex-direction: row !important; 
     justify-content: space-between !important; 
-    align-items: center !important;
+    align-items: center !important; 
     box-sizing: border-box;
     width: 100%;
 }
