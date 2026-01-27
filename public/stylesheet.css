@@ -457,37 +457,22 @@ padding: 2rem;
   opacity: 0.8;
 }
 
-/* Chatbot Styling */
-/* Chatbot Toggle Button */
-#chat-toggle { 
-    position: fixed !important; 
-    bottom: 20px !important; 
-    right: 20px !important; 
-    background: #004a99; 
-    color: white; 
-    border: none; 
-    padding: 12px 20px; 
-    border-radius: 50px; 
-    cursor: pointer !important; 
-    z-index: 9999999 !important; 
-    display: block !important;
-    pointer-events: auto !important;
+#chat-toggle {
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 20px !important;
+    display: block !important; /* Force it to show */
+    z-index: 9999999 !important;
 }
 
-/* Chatbot Window */
 #tsa-chat {
-    position: fixed !important; 
-    bottom: 80px !important; 
-    right: 20px !important; 
-    width: 300px; 
-    background: white; 
-    border-radius: 12px; 
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    font-family: Arial, sans-serif; 
-    display: none; 
-    flex-direction: column; 
-    z-index: 9999999 !important; 
-    overflow: hidden;
+    position: fixed !important;
+    bottom: 80px !important;
+    right: 20px !important;
+    width: 300px;
+    height: 400px;
+    z-index: 9999999 !important;
+    /* Don't put display:flex here, the JS handles that */
 }
 #chat-header { 
     background: #000000; 
