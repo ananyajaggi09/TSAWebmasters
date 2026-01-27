@@ -1,13 +1,9 @@
 function toggleChat() {
     const chat = document.getElementById('tsa-chat');
-    const btn = document.getElementById('chat-toggle');
-    
-    if (chat.style.display === 'flex') {
-        chat.style.display = 'none';
-        btn.style.display = 'block'; // Show the button when chat is closed
-    } else {
+    if (chat.style.display === 'none' || chat.style.display === '') {
         chat.style.display = 'flex';
-        btn.style.display = 'none';  // Hide the button when chat is open
+    } else {
+        chat.style.display = 'none';
     }
 }
 

@@ -458,10 +458,37 @@ padding: 2rem;
 }
 
 /* Chatbot Styling */
+/* Chatbot Toggle Button */
+#chat-toggle { 
+    position: fixed !important; 
+    bottom: 20px !important; 
+    right: 20px !important; 
+    background: #004a99; 
+    color: white; 
+    border: none; 
+    padding: 12px 20px; 
+    border-radius: 50px; 
+    cursor: pointer !important; 
+    /* This needs to be HIGHER than the navbar and sliders */
+    z-index: 9999999 !important; 
+    display: block !important;
+    pointer-events: auto !important;
+}
+
+/* Chatbot Window */
 #tsa-chat {
-    position: fixed; bottom: 20px; right: 20px; width: 300px; 
-    background: white; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    font-family: Arial, sans-serif; display: none; flex-direction: column; z-index: 10000; overflow: hidden;
+    position: fixed !important; 
+    bottom: 80px !important; /* Move it up so it doesn't cover the button */
+    right: 20px !important; 
+    width: 300px; 
+    background: white; 
+    border-radius: 12px; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    font-family: Arial, sans-serif; 
+    display: none; 
+    flex-direction: column; 
+    z-index: 9999999 !important; 
+    overflow: hidden;
 }
 #chat-header { background: #000000; color: white; padding: 15px; font-weight: bold; }
 #chat-header span:last-child:hover {
@@ -472,4 +499,3 @@ padding: 2rem;
 #user-input { flex: 1; border: 1px solid #ccc; padding: 8px; border-radius: 4px; }
 .bot-msg { background: #d1eaff; padding: 8px; border-radius: 10px 10px 10px 0; align-self: flex-start; font-size: 13px; }
 .user-msg { background: #000000; color: white; padding: 8px; border-radius: 10px 10px 0 10px; align-self: flex-end; font-size: 13px; }
-#chat-toggle { position: fixed; bottom: 20px; right: 20px; background: #004a99; color: white; border: none; padding: 12px 20px; border-radius: 50px; cursor: pointer; z-index: 999999; pointer-events: auto !important; }
