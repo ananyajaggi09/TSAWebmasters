@@ -457,13 +457,6 @@ padding: 2rem;
   opacity: 0.8;
 }
 
-#chat-toggle {
-    position: fixed !important;
-    bottom: 20px !important;
-    right: 20px !important;
-    display: block !important; /* Force it to show */
-    z-index: 9999999 !important;
-}
 #tsa-chat {
     position: fixed !important;
     bottom: 80px !important;
@@ -508,8 +501,56 @@ padding: 2rem;
     border-top: 1px solid #ddd !important;
     flex-shrink: 0 !important; /* PREVENTS SQUISHING */
 }
-#chat-header span:last-child:hover {
-    color: #ff4d4d; 
+
+#chat-toggle {
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 20px !important;
+    background-color: var(--ink-color) !important;
+    color: var(--paper-bg) !important;
+    border: 2px solid var(--highlight-color) !important;
+    padding: 12px 20px !important;
+    font-family: var(--font-headline) !important;
+    font-size: 1rem !important;
+    font-weight: bold !important;
+    cursor: pointer !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3) !important;
+    z-index: 9999999 !important;
+    display: block !important;
+    transition: all 0.3s ease !important;
+}
+
+#chat-toggle:hover {
+    background-color: var(--highlight-color) !important;
+    transform: scale(1.05) !important;
+}
+
+/* Send button styling - ADD THIS TOO */
+#chat-input-area button {
+    background-color: var(--ink-color) !important;
+    color: var(--paper-bg) !important;
+    border: 1px solid var(--ink-color) !important;
+    padding: 8px 15px !important;
+    margin-left: 5px !important;
+    cursor: pointer !important;
+    font-family: var(--font-typewriter) !important;
+    border-radius: 4px !important;
+}
+
+#chat-input-area button:hover {
+    background-color: var(--highlight-color) !important;
+}
+
+/* Close button styling */
+#close-btn {
+    cursor: pointer !important;
+    font-size: 1.5rem !important;
+    font-weight: bold !important;
+}
+
+#close-btn:hover {
+    color: #ff4d4d !important;
 }
 
 #user-input { flex: 1; border: 1px solid #ccc; padding: 8px; border-radius: 4px; }
