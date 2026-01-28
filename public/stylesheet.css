@@ -128,16 +128,119 @@ main {
 /* card style */
 body > p,
 body > ul,
-.burnt-paper-card,
-.spotlight-section {
+.burnt-paper-card {
   background: var(--paper-bg);
   padding: 2.5rem;
+  margin: 2rem auto;
   margin-bottom: 2rem;
   position: relative;
+  max-width: 900px;
   
   border: 10px solid;
   border-image: url('https://i.imgur.com/hgaM2h1.png') 30 stretch;
   box-shadow: 0 10px 30px var(--shadow-color);
+  overflow: visible;
+}
+
+.spotlight-section {
+  background: #e9d8c4;
+  padding: 2.5rem;
+  margin: 2rem auto;
+  margin-bottom: 2rem;
+  position: relative;
+  max-width: 900px;
+  
+  border: 10px solid #330000;
+  box-shadow: 0 10px 30px var(--shadow-color);
+  overflow: visible;
+  transition: all 0.3s ease;
+}
+
+.spotlight-section:hover {
+  transform: scale(1.02);
+  box-shadow: 0 15px 40px rgba(51, 0, 0, 0.6), 0 0 30px rgba(255, 255, 0, 0.3);
+  border-color: #660000;
+}
+
+/* Animated glowing lights overlay */
+.christmas-lights {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.light {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  animation: flicker 2s infinite;
+}
+
+/* Different colored lights */
+.light.red {
+  background: #ff0000;
+  box-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
+  animation-delay: 0s;
+}
+
+.light.yellow {
+  background: #ffff00;
+  box-shadow: 0 0 10px #ffff00, 0 0 20px #ffff00;
+  animation-delay: 0.5s;
+}
+
+.light.green {
+  background: #00ff00;
+  box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+  animation-delay: 1s;
+}
+
+.light.blue {
+  background: #00bfff;
+  box-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff;
+  animation-delay: 1.5s;
+}
+
+/* Flickering animation */
+@keyframes flicker {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  25% {
+    opacity: 0.6;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  75% {
+    opacity: 0.7;
+    transform: scale(0.95);
+  }
+}
+
+
+.light:nth-child(2n) {
+  animation-duration: 2.3s;
+}
+
+.light:nth-child(3n) {
+  animation-duration: 1.8s;
+}
+
+.light:nth-child(4n) {
+  animation-duration: 2.1s;
+}
+
+.light:nth-child(5n) {
+  animation-duration: 1.9s;
 }
 
 /* links styling */
@@ -193,7 +296,7 @@ img {
   margin: 0.5rem 0 1.5rem 0;
 }
 
-/* button */
+
 .vintage-btn {
   display: inline-block;
   background-color: var(--ink-color);
@@ -215,7 +318,7 @@ img {
   color: var(--paper-bg);
 }
 
-/* toolbar styling */
+
 .filter-toolbar {
     display: flex;
     flex-wrap: wrap;
@@ -240,7 +343,7 @@ img {
     text-transform: uppercase;
 }
 
-/* input styling */
+
 select, 
 input[type="date"], 
 input[type="text"]#search-input {
@@ -266,7 +369,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     cursor: pointer;
 }
 
-/*MULTI-SELECT--- */
+
 select[multiple] {
     height: 150px; 
     border: 2px solid var(--ink-color); 
@@ -275,14 +378,13 @@ select[multiple] {
     line-height: 1.2;
 }
 
-/* Style for the options within the multi-select */
+
 select[multiple] option {
     padding: 5px;
 }
 
-/* Style for selected options */
+
 select[multiple] option:checked {
-    /* Highlight selected options with the theme color */
     background-color: var(--highlight-color);
     color: var(--paper-bg);
 }
