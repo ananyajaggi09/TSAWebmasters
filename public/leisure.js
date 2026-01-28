@@ -139,6 +139,9 @@ function renderSpotlight(data) {
         </div>
         `;
     }).join('');
+    
+    // Add Christmas lights after rendering
+    addChristmasLights();
 }
 
 // events listeners
@@ -239,4 +242,57 @@ function performSearch() {
     });
 
     renderList(filtered);
+}
+
+// Christmas Lights Animation
+function addChristmasLights() {
+    const spotlight = document.getElementById('spotlight-container');
+    if (!spotlight) return;
+    
+    // Remove existing lights if any
+    const existingLights = spotlight.querySelector('.christmas-lights');
+    if (existingLights) existingLights.remove();
+
+    // Create lights container
+    const lightsContainer = document.createElement('div');
+    lightsContainer.className = 'christmas-lights';
+    
+    const width = spotlight.offsetWidth;
+    const height = spotlight.offsetHeight;
+    
+    const colors = ['yellow'];
+    const spacing = 40;
+    
+    // Trace the exact black border outline
+    const borderOffset = -10; // Offset to center and move left
+    
+    // Top lights - on the border line
+    for (let x = 20; x < width; x += spacing) {
+        createLight(lightsContainer, x, borderOffset, colors);
+    }
+    
+    // Bottom lights - on the border line
+    for (let x = 20; x < width; x += spacing) {
+        createLight(lightsContainer, x, height + borderOffset, colors);
+    }
+    
+    // Left lights - on the border line
+    for (let y = 0; y <= height; y += spacing) {
+        createLight(lightsContainer, borderOffset, y, colors);
+    }
+    
+    // Right lights - on the border line
+    for (let y = 0; y <= height; y += spacing) {
+        createLight(lightsContainer, width + borderOffset, y, colors);
+    }
+    
+    spotlight.appendChild(lightsContainer);
+}
+
+function createLight(container, x, y, colors) {
+    const light = document.createElement('div');
+    light.className = 'light ' + colors[Math.floor(Math.random() * colors.length)];
+    light.style.left = x + 'px';
+    light.style.top = y + 'px';
+    container.appendChild(light);
 }
