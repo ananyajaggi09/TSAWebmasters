@@ -556,3 +556,43 @@ padding: 2rem;
 #user-input { flex: 1; border: 1px solid #ccc; padding: 8px; border-radius: 4px; }
 .bot-msg { background: #d1eaff; padding: 8px; border-radius: 10px 10px 10px 0; align-self: flex-start; font-size: 13px; }
 .user-msg { background: #000000; color: white; padding: 8px; border-radius: 10px 10px 0 10px; align-self: flex-end; font-size: 13px; }
+
+/* History page styling */
+.history-section {
+    margin: 3rem 0;
+}
+
+.history-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.history-content.left {
+    flex-direction: row;
+}
+
+.history-content.right {
+    flex-direction: row-reverse;
+}
+
+.history-img {
+    width: 400px;
+    height: 300px;
+    object-fit: cover;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.history-text {
+    flex: 1;
+    background: var(--paper-bg);
+    padding: 2rem;
+    border: 2px solid var(--ink-color);
+    box-shadow: 5px 5px 0 var(--shadow-color);
+}
+
+.history-text h2 {
+    margin-top: 0;
+}
