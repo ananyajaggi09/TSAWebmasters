@@ -53,6 +53,13 @@ function renderReferences(data) {
         return;
     }
 
+    validItems.sort((a, b) => {
+        const urlA = getLinkField(a);
+        const urlB = getLinkField(b);        
+        if (!urlA || !urlB) return 0;
+        return urlA.toLowerCase().localeCompare(urlB.toLowerCase());
+    });
+
     const htmlContent = validItems.map(item => {
         const url = getLinkField(item);
         
