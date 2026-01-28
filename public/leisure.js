@@ -124,24 +124,28 @@ function renderSpotlight(data) {
     }
 
     container.style.display = 'block';
-    list.innerHTML = spotlightItems.map(item => {
-        const location = getField(item, 'location'); 
-        return `
-        <div class="event-clipping">
-            <h3>${getField(item, 'name') || 'Untitled'}</h3>
-            <div class="event-date">
-                ${getField(item, 'start date')}
-                ${location ? `<br><span>@ ${location}</span>` : ''}
-            </div>
-            <p>${getField(item, 'description')}</p>
-            <br>
-            <a href="${getField(item, 'References') || '#'}" target="_blank" class="vintage-btn">View Details</a>
-        </div>
-        `;
-    }).join('');
-    
-    // Add Christmas lights after rendering
-    addChristmasLights();
+list.innerHTML = spotlightItems.map(item => {
+    const location = getField(item, 'location');
+
+    return (
+        '<div class="event-clipping">' +
+            '<h3>' + (getField(item, 'name') || 'Untitled') + '</h3>' +
+            '<div class="event-date">' +
+                getField(item, 'start date') +
+                (location ? '<br><span>@ ' + location + '</span>' : '') +
+            '</div>' +
+            '<p>' + getField(item, 'description') + '</p>' +
+            '<br>' +
+            '<a href="' + (getField(item, 'References') || '#') + '" target="_blank" class="vintage-btn">' +
+                'View Details' +
+            '</a>' +
+        '</div>'
+    );
+}).join('');
+
+// Add Christmas lights after rendering
+addChristmasLights();
+
 }
 
 // events listeners
@@ -149,41 +153,45 @@ function renderList(data) {
     const list = document.getElementById('resource-list');
 
     if (data.length === 0) {
-        list.innerHTML = '<div class="burnt-paper-card"><p align="center">No matching records found in the archives.</p></div>';
+        list.innerHTML =
+            '<div class="burnt-paper-card">' +
+                '<p align="center">No matching records found in the archives.</p>' +
+            '</div>';
         return;
     }
 
     list.innerHTML = data.map(item => {
         const name = getField(item, 'name');
-        if (!name) return ''; 
+        if (!name) return '';
 
         const type = getField(item, 'type');
         const category = getField(item, 'category');
         const startDate = getField(item, 'start date');
         const endDate = getField(item, 'end date');
-        const location = getField(item, 'location'); 
+        const location = getField(item, 'location');
 
-        return `
-        <div class="burnt-paper-card">
-            <div style="float: right; font-size: 0.8rem; text-transform: uppercase; border-bottom: 1px solid;">
-                ${type} / ${category}
-            </div>
-            <h3>${name}</h3>
-            
-            <p style="font-style: italic; color: var(--highlight-color);">
-                ${startDate} ${getField(item, 'start time')}
-                ${endDate ? ' - ' + endDate : ''}
-                ${location ? ` &nbsp;|&nbsp; <span>@ ${location}</span>` : ''}
-            </p>
-
-            <p>${getField(item, 'description')}</p>
-            <p style="text-align: right;">
-                 <a href="${getField(item, 'links') || '#'}" target="_blank" class="vintage-btn">View Details</a>
-            </p>
-        </div>
-        `;
+        return (
+            '<div class="burnt-paper-card">' +
+                '<div style="float: right; font-size: 0.8rem; text-transform: uppercase; border-bottom: 1px solid;">' +
+                    type + ' / ' + category +
+                '</div>' +
+                '<h3>' + name + '</h3>' +
+                '<p style="font-style: italic; color: var(--highlight-color);">' +
+                    startDate + ' ' + getField(item, 'start time') +
+                    (endDate ? ' - ' + endDate : '') +
+                    (location ? ' &nbsp;|&nbsp; <span>@ ' + location + '</span>' : '') +
+                '</p>' +
+                '<p>' + getField(item, 'description') + '</p>' +
+                '<p style="text-align: right;">' +
+                    '<a href="' + (getField(item, 'links') || '#') + '" target="_blank" class="vintage-btn">' +
+                        'View Details' +
+                    '</a>' +
+                '</p>' +
+            '</div>'
+        );
     }).join('');
 }
+
 
 // search/filter
 function performSearch() {

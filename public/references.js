@@ -66,4 +66,5 @@ function renderReferences(data) {
     }).join('');
 
     container.innerHTML = htmlContent;
+    
 }
