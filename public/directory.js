@@ -141,7 +141,6 @@ function renderSpotlight(data) {
         `;
     }).join('');
     
-    // Add Christmas lights after rendering
     addChristmasLights();
 }
 

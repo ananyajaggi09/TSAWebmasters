@@ -32,7 +32,7 @@ function getLinkField(item) {
     
     const key = Object.keys(item).find(k => {
         const lower = k.toLowerCase().trim();
-        return lower === 'links' || lower === 'link' || lower === 'url';
+        return lower === 'References' || lower === 'reference' || lower === 'references';
     });
     
     return key ? item[key] : '';

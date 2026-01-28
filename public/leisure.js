@@ -135,7 +135,7 @@ function renderSpotlight(data) {
             </div>
             <p>${getField(item, 'description')}</p>
             <br>
-            <a href="${getField(item, 'links') || '#'}" target="_blank" class="vintage-btn">View Details</a>
+            <a href="${getField(item, 'References') || '#'}" target="_blank" class="vintage-btn">View Details</a>
         </div>
         `;
     }).join('');
