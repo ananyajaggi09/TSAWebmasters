@@ -1,6 +1,19 @@
 /* font */
 @import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:700&family=Special+Elite&display=swap');
 
+.hero {
+  width: 100%;
+  margin-top: 3rem;   
+  margin-bottom: 3rem;
+  text-align: center;
+}
+.hero img {
+  width: 100%;
+  height: auto;      
+  display: block;
+}
+
+
 :root {
   --font-typewriter: 'Special Elite', monospace;
   --font-headline: 'Old Standard TT', serif;
