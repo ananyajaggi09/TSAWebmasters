@@ -8,8 +8,9 @@
   text-align: center;
 }
 .hero img {
-  width: 100%;
-  height: auto;      
+  width: 99%;
+  height: 400px;    
+  object-fit: cover;  
   display: block;
 }
 
