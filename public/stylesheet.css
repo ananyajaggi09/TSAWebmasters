@@ -608,7 +608,7 @@ padding: 2rem;
     position: fixed !important;
     bottom: 20px !important;
     right: 20px !important;
-    background-color: #007bff !important; 
+    background-color: #350303 !important; 
     color: white !important;
     border: none !important;
     padding: 15px 30px !important;
@@ -617,16 +617,16 @@ padding: 2rem;
     font-weight: bold !important;
     cursor: pointer !important;
     border-radius: 50px !important; 
-    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4) !important;
+    box-shadow: 0 4px 15px rgba(70, 3, 3, 0.4) !important;
     z-index: 9999999 !important;
     display: block !important;
     transition: all 0.3s ease !important;
 }
 
 #chat-toggle:hover {
-    background-color: #0056b3 !important; 
+    background-color: #3d0505 !important; 
     transform: scale(1.05) !important;
-    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.6) !important;
+    box-shadow: 0 6px 20px rgba(62, 2, 2, 0.6) !important;
 }
 
 
